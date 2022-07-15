@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-package-flask-test-deployment-az
+  labels:
+    app: python-package-flask-test-az
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-package-flask-test-az
+  template:
+    metadata:
+      labels:
+        app: python-package-flask-test-az
+    spec:
+      imagePullSecrets:
+      - name: acr-secret 
+      containers:
+      - name: python-package-flask-test-az
+        image: ricardobootcampregistry.azurecr.io/python-package-flask-test:v1
+        ports:
+        - containerPort: 5000
