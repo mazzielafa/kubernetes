@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-package-flask-test-deployment
+  labels:
+    app: python-package-flask-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-package-flask-test
+  template:
+    metadata:
+      labels:
+        app: python-package-flask-test
+    spec:
+      containers:
+      - name: python-package-flask-test
+        image: ricardoahumada/python-package-flask-test
+        ports:
+        - containerPort: 5000
