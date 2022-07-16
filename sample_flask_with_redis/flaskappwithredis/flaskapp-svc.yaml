@@ -6,10 +6,12 @@ metadata:
   name: flaskapp
   namespace: flaskapp-dev
 spec:
-  ports:
-  - name: http
-    port: 5000
-    targetPort: http
   selector:
     app: flask
   type: LoadBalancer
+  ports:
+  - port: 5000
+    targetPort: http
+    nodePort: 30163 #30000-32767
+    protocol: TCP
+    name: http

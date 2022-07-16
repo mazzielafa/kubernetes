@@ -54,6 +54,8 @@
 - kubectl get replicasets -n flaskapp-dev
 - kubectl describe replicaset/flaskapp -n flaskapp-dev
 - kubectl get deployments -n flaskapp-dev
+- Show logs:
+	- kubectl logs replicaset/flaskapp
 - Go inside a pod:
 	- kubectl exec --stdin --tty <pod_name> -- /bin/sh 
 - Print env from a pod:
