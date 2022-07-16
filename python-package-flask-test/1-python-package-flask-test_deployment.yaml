@@ -18,4 +18,5 @@ spec:
       - name: python-package-flask-test
         image: ricardoahumada/python-package-flask-test
         ports:
-        - containerPort: 5000
+        - name: http
+          containerPort: 5000
