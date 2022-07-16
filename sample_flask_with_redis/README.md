@@ -77,8 +77,8 @@
 ## Clean up
 - kubectl delete service flaskapp-service -n  flaskapp-dev
 - kubectl delete replicaset flaskapp -n flaskapp-dev
-- kubectl delete service redis-service -n  flaskapp-dev
-- kubectl delete deployment redis -n flaskapp-dev
+- kubectl delete service redis -n  flaskapp-dev
+- kubectl delete deployment redis-dep -n flaskapp-dev
 - OR all in all:
 	- kubectl delete all --all -n flaskapp-dev
 - kubectl config use-context minikube
