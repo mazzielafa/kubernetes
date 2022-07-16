@@ -55,19 +55,17 @@
 - kubectl get namespaces
 - kubectl get all -n flaskapp-dev
 - kubectl get services -n flaskapp-dev
-- kubectl describe service/flaskapp -n flaskapp-dev
+- kubectl describe service/flaskapp-service -n flaskapp-dev
 - kubectl get replicasets -n flaskapp-dev
 - kubectl describe replicaset/flaskapp -n flaskapp-dev
 - kubectl get deployments -n flaskapp-dev
 - Show logs:
 	- kubectl logs replicaset/flaskapp -n flaskapp-dev 
+	- kubectl logs deployment/redis -n flaskapp-dev 
 - Go inside a pod:
 	- kubectl exec --stdin --tty <pod_name> -- /bin/sh 
 - Print env from a pod:
 	- kubectl exec <pod_nam> -- printenv | grep SERVICE
-- Show nodePort and node external IP:
-	- kubectl get svc flaskapp -o yaml | grep nodePort -C 5
-	- kubectl get nodes -o yaml | grep ExternalIP
 
 ## Create contexts with namespace to work:
 - kubectl config set-context flaskapp-dev --namespace=flaskapp-dev --cluster=minikube --user=minikube
@@ -77,8 +75,10 @@
 - kubectl get all
 
 ## Clean up
-- kubectl delete service flaskapp -n  flaskapp-dev
+- kubectl delete service flaskapp-service -n  flaskapp-dev
 - kubectl delete replicaset flaskapp -n flaskapp-dev
+- kubectl delete service redis-service -n  flaskapp-dev
+- kubectl delete deployment redis -n flaskapp-dev
 - OR all in all:
 	- kubectl delete all --all -n flaskapp-dev
 - kubectl config use-context minikube

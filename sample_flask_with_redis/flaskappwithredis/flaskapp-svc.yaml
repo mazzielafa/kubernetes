@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: flask
-  name: flaskapp
+  name: flaskapp-service
   namespace: flaskapp-dev
 spec:
   selector:
