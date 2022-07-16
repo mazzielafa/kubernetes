@@ -24,10 +24,16 @@
 - docker build --tag=ricardoahumada/flaskappforredis -f app/Dockerfile .
 
 ## Run images
-- ⚠remember stopping redis on localhost:
+- ⚠remember stopping redis on localhost and unset ENV:
 	- sudo service redis stop
+	- unset REDIS_HOSTNAME
 - docker run --detach --publish=6379:6379 --name=redis ricardoahumada/redis
-- docker run --detach --publish=8090:80 --name=flaskappforredis ricardoahumada/flaskappforredis
+	- ⚠Set REDIS_HOSTNAME to redis IP:
+		- docker inspect container redis | more
+		- export REDIS_HOSTNAME=<IP>
+- docker run -d -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2  --name=flaskappforredis ricardoahumada/flaskappforredis
+	- For verify start:
+		- docker run -it -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2  --name=flaskappforredis ricardoahumada/flaskappforredis
 
 ## Push images
 - docker push ricardoahumada/redis
