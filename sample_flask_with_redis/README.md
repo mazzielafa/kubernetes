@@ -1,8 +1,15 @@
 # sample flask with redis
 
 ## Manually execute the app
-- Must have redis installed locally
-- SET REDIS_HOSTNAME=localhost
+- ⚠Must have redis installed locally!
+	- sudo apt update
+	- sudo apt install -y redis-server
+	- sudo service redis status
+- Set env REDIS_HOSTNAME
+	- Windows: 
+		- SET REDIS_HOSTNAME=localhost
+	- Linux: 
+		- export REDIS_HOSTNAME=localhost
 - python3 flask_app.py
 
 ## Endpoints
