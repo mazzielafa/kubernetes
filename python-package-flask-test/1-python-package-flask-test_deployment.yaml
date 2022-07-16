@@ -15,7 +15,7 @@ spec:
         app: python-package-flask-test
     spec:
       containers:
-      - name: python-package-flask-test
+      - name: python-package-flask-test-deployment
         image: ricardoahumada/python-package-flask-test
         ports:
         - name: http
