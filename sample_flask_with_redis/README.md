@@ -49,7 +49,12 @@
 ## Inspect
 - kubectl get namespaces
 - kubectl get all -n flaskapp-dev
+- kubectl get services -n flaskapp-dev
+- kubectl get replicasets -n flaskapp-dev
 
 ## Clean up
 - kubectl delete service flaskapp -n  flaskapp-dev
 - kubectl delete replicaset flaskapp -n flaskapp-dev
+- OR all in all:
+	- kubectl delete all --all -n flaskapp-dev
+
