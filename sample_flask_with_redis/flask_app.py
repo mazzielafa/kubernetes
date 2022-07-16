@@ -21,3 +21,7 @@ def set_price(price):
 def get_price():
     price = int(cache.get("price"))
     return f"The price is {price}.\n"
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run('0.0.0.0', port=port)
