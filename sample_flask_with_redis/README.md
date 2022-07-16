@@ -49,7 +49,7 @@
 	- kubectl apply -f flaskappwithredis/flaskapp-rs.yaml
 	- kubectl apply -f flaskappwithredis/flaskapp-svc.yaml
 - Forward port:
-	- kubectl port-forward service/flaskapp 5000:5000 -n flaskapp-dev
+	- kubectl port-forward service/flaskapp-service 5000:5000 -n flaskapp-dev
 
 ## Inspect
 - kubectl get namespaces
@@ -63,9 +63,9 @@
 	- kubectl logs replicaset/flaskapp -n flaskapp-dev 
 	- kubectl logs deployment/redis -n flaskapp-dev 
 - Go inside a pod:
-	- kubectl exec --stdin --tty <pod_name> -- /bin/sh 
+	- kubectl exec --stdin --tty <pod_name> -n flaskapp-dev -- /bin/sh 
 - Print env from a pod:
-	- kubectl exec <pod_nam> -- printenv | grep SERVICE
+	- kubectl exec <pod_name> -- printenv -n flaskapp-dev | grep SERVICE
 
 ## Create contexts with namespace to work:
 - kubectl config set-context flaskapp-dev --namespace=flaskapp-dev --cluster=minikube --user=minikube

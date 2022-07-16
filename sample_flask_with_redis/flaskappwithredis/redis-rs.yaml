@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: redis-dep
   namespace: flaskapp-dev
 spec:
   selector:
@@ -14,7 +14,7 @@ spec:
         app: redis
     spec:
       containers:
-      - name: redis
+      - name: redis-dep
         image: ricardoahumada/redis:latest
         ports:
         - containerPort: 6379
