@@ -17,7 +17,8 @@ spec:
       imagePullSecrets:
       - name: acr-secret 
       containers:
-      - name: python-package-flask-test-az
+      - name: python-package-flask-test-deployment-az
         image: ricardobootcampregistry.azurecr.io/python-package-flask-test:v1
         ports:
-        - containerPort: 5000
+        - name: http
+          containerPort: 5000
