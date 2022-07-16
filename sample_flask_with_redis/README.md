@@ -86,7 +86,8 @@
 ## Using kustomization.yaml
 
 ## Create
-kubectl apply -k ./
+- kubectl apply -k ./
+- kubectl port-forward service/flaskapp-service 5000:5000 -n flaskapp-dev
 
 ## Delete/clean up
-kubectl delete -k ./
+- kubectl delete -k ./
