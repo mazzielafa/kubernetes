@@ -41,5 +41,15 @@
 
 ## Deploy in kubernetes
 - kubectl apply -f flaskappwithredis/app-ns.yaml
-- kubectl apply -f flaskappwithredis/flaskapp-svc.yaml
+- kubectl apply -f flaskappwithredis/redis-rs.yaml
+- kubectl apply -f flaskappwithredis/redis-svc.yaml
 - kubectl apply -f flaskappwithredis/flaskapp-rs.yaml
+- kubectl apply -f flaskappwithredis/flaskapp-svc.yaml
+
+## Inspect
+- kubectl get namespaces
+- kubectl get all -n flaskapp-dev
+
+## Clean up
+- kubectl delete service flaskapp -n  flaskapp-dev
+- kubectl delete replicaset flaskapp -n flaskapp-dev

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: flaskapp
-        image: barteks/flaskappforredis:latest
+        image: ricardoahumada/flaskappforredis:latest
         ports:
         - name: http
-          containerPort: 80
+          containerPort: 5000

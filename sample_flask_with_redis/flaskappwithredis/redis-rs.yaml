@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: barteks/redis:latest
+        image: ricardoahumada/redis:latest
         ports:
         - containerPort: 6379
       restartPolicy: Always
