@@ -12,11 +12,11 @@
 		- export REDIS_HOSTNAME=localhost
 - python3 flask_app.py
 
-## Endpoints
-- curl localhost:5000/
-- curl localhost:5000/set_price/<int:price>
-	- example: curl localhost:5000/set_price/2346
-- curl localhost:5000/get_price
+### Endpoints
+	- curl localhost:5000/
+	- curl localhost:5000/set_price/<int:price>
+		- example: curl localhost:5000/set_price/2346
+	- curl localhost:5000/get_price
 
 
 ## Build images
@@ -24,15 +24,15 @@
 - docker build --tag=ricardoahumada/flaskappforredis -f app/Dockerfile .
 
 ## Run images
-- ⚠remember stopping redis on localhost and unset ENV:
+- ⚠remember to stop redis on localhost and unset ENV:
 	- sudo service redis stop
 	- unset REDIS_HOSTNAME
 - docker run --detach --publish=6379:6379 --name=redis ricardoahumada/redis
 	- ⚠Set REDIS_HOSTNAME to redis IP:
 		- docker inspect container redis | more
 		- export REDIS_HOSTNAME=<IP>
-- docker run -d -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2  --name=flaskappforredis ricardoahumada/flaskappforredis
-	- For verify start:
+- docker run -d -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2 --name=flaskappforredis ricardoahumada/flaskappforredis
+	- To verify execute:
 		- docker run -it -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2  --name=flaskappforredis ricardoahumada/flaskappforredis
 
 ## Push images
