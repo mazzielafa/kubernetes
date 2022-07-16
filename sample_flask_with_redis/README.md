@@ -13,9 +13,10 @@
 - python3 flask_app.py
 
 ## Endpoints
-- localhost:5000/
-- localhost:5000/set_price/<int:price>
-- localhost:5000/get_price
+- curl localhost:5000/
+- curl localhost:5000/set_price/<int:price>
+	- example: curl localhost:5000/set_price/2346
+- curl localhost:5000/get_price
 
 
 ## Build images
@@ -23,8 +24,10 @@
 - docker build --tag=ricardoahumada/flaskappforredis -f app/Dockerfile .
 
 ## Run images
+- ⚠remember stopping redis on localhost:
+	- sudo service redis stop
 - docker run --detach --publish=6379:6379 --name=redis ricardoahumada/redis
-- docker run --detach --publish=8080:80 --name=flaskappforredis ricardoahumada/flaskappforredis
+- docker run --detach --publish=8090:80 --name=flaskappforredis ricardoahumada/flaskappforredis
 
 ## Push images
 - docker push ricardoahumada/redis
