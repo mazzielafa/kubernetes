@@ -4,7 +4,7 @@ metadata:
   labels:	
     app.kubernetes.io/instance: redis
   name: redis-deployment	
-  namespace: default	
+  namespace: flaskapp-dev
   selfLink: /api/v1/namespaces/default/services/redis-deployment	
 spec:
   ports:

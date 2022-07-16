@@ -50,7 +50,11 @@
 - kubectl get namespaces
 - kubectl get all -n flaskapp-dev
 - kubectl get services -n flaskapp-dev
+- kubectl describe service/flaskapp -n flaskapp-dev
 - kubectl get replicasets -n flaskapp-dev
+- kubectl describe replicaset/flaskapp -n flaskapp-dev
+- kubectl get deployments -n flaskapp-dev
+
 
 ## Clean up
 - kubectl delete service flaskapp -n  flaskapp-dev
