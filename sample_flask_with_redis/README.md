@@ -41,10 +41,10 @@
 
 ## Deploy in kubernetes
 - kubectl apply -f flaskappwithredis/app-ns.yaml
-- kubectl apply -f flaskappwithredis/redis-rs.yaml
 - kubectl apply -f flaskappwithredis/redis-svc.yaml
-- kubectl apply -f flaskappwithredis/flaskapp-rs.yaml
+- kubectl apply -f flaskappwithredis/redis-rs.yaml
 - kubectl apply -f flaskappwithredis/flaskapp-svc.yaml
+- kubectl apply -f flaskappwithredis/flaskapp-rs.yaml
 
 ## Inspect
 - kubectl get namespaces
@@ -54,11 +54,25 @@
 - kubectl get replicasets -n flaskapp-dev
 - kubectl describe replicaset/flaskapp -n flaskapp-dev
 - kubectl get deployments -n flaskapp-dev
+- Go inside a pod:
+	- kubectl exec --stdin --tty <pod_name> -- /bin/sh 
+- Print env from a pod:
+	- kubectl exec <pod_nam> -- printenv | grep SERVICE
+- Show nodePort and node external IP:
+	- kubectl get svc flaskapp -o yaml | grep nodePort -C 5
+	- kubectl get nodes -o yaml | grep ExternalIP
 
+## Create contexts with namespace to work:
+- kubectl config set-context flaskapp-dev --namespace=flaskapp-dev --cluster=minikube --user=minikube
+- kubectl config get-contexts
+- kubectl config use-context flaskapp-dev
+- kubectl config current-context
+- kubectl get all
 
 ## Clean up
 - kubectl delete service flaskapp -n  flaskapp-dev
 - kubectl delete replicaset flaskapp -n flaskapp-dev
 - OR all in all:
 	- kubectl delete all --all -n flaskapp-dev
+- kubectl config use-context minikube
 
