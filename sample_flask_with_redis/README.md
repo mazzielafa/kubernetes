@@ -83,3 +83,10 @@
 	- kubectl delete all --all -n flaskapp-dev
 - kubectl config use-context minikube
 
+## Using kustomization.yaml
+
+## Create
+kubectl apply -k ./
+
+## Delete/clean up
+kubectl delete -k ./

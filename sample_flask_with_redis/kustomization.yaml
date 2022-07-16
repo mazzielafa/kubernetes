@@ -1,0 +1,6 @@
+resources:
+  - flaskappwithredis/app-ns.yaml
+  - flaskappwithredis/redis-rs.yaml
+  - flaskappwithredis/redis-svc.yaml
+  - flaskappwithredis/flaskapp-rs.yaml
+  - flaskappwithredis/flaskapp-svc.yaml
