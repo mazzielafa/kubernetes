@@ -39,7 +39,7 @@
 	- curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 	- ref: https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
 	- az login
-	- az aks get-credentials --resource-group <myResourceGroup> --name <myAKSCluster>
+	- az aks get-credentials --resource-group <myResourceGroup> --name <myAKSCluster> --admin
 - kubectl config get-contexts
 - kubectl config set current-context AZ-CONTEXT
 - kubectl get nodes
