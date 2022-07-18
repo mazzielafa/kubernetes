@@ -21,7 +21,7 @@
 ## Execute AZ: same as Normal, but...
 - ⚠Needs AZ credentials to be added to kubectl:
 	- Login into azure registry:
-		- docker login <acr-path>
+		- docker login [acr-path]
 	- Add credentials to kubectl:
 		- kubectl create secret generic acr-secret --from-file=.dockerconfigjson=$HOME/.docker/config.json --type=kubernetes.io/dockerconfigjson
 - kubectl apply -f 3-python-package-flask-test_deployment_az.yaml
@@ -39,7 +39,7 @@
 	- curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 	- ref: https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
 	- az login
-	- az aks get-credentials --resource-group <myResourceGroup> --name <myAKSCluster> --admin
+	- az aks get-credentials --resource-group [myResourceGroup] --name [myAKSCluster] --admin
 - kubectl config get-contexts
 - kubectl config set current-context AZ-CONTEXT
 - kubectl get nodes
