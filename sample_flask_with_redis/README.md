@@ -14,7 +14,7 @@
 
 ### Endpoints
 	- curl localhost:5000/
-	- curl localhost:5000/set_price/<int:price>
+	- curl localhost:5000/set_price/[int:price]
 		- example: curl localhost:5000/set_price/2346
 	- curl localhost:5000/get_price
 
@@ -30,7 +30,7 @@
 - docker run --detach --publish=6379:6379 --name=redis ricardoahumada/redis
 	- ⚠Set REDIS_HOSTNAME to redis IP:
 		- docker inspect container redis | more
-		- export REDIS_HOSTNAME=<IP>
+		- export REDIS_HOSTNAME=[IP]
 - docker run -d -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2 --name=flaskappforredis ricardoahumada/flaskappforredis
 	- To verify execute:
 		- docker run -it -p=5000:5000 -e REDIS_HOSTNAME=172.17.0.2  --name=flaskappforredis ricardoahumada/flaskappforredis
@@ -63,9 +63,9 @@
 	- kubectl logs replicaset/flaskapp -n flaskapp-dev 
 	- kubectl logs deployment/redis -n flaskapp-dev 
 - Go inside a pod:
-	- kubectl exec --stdin --tty <pod_name> -n flaskapp-dev -- /bin/sh 
+	- kubectl exec --stdin --tty [pod_name] -n flaskapp-dev -- /bin/sh 
 - Print env from a pod:
-	- kubectl exec <pod_name> -- printenv -n flaskapp-dev | grep SERVICE
+	- kubectl exec [pod_name] -- printenv -n flaskapp-dev | grep SERVICE
 
 ## Create contexts with namespace to work:
 - kubectl config set-context flaskapp-dev --namespace=flaskapp-dev --cluster=minikube --user=minikube
