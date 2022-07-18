@@ -41,7 +41,7 @@
 
 ## Deploy in kubernetes
 - Architecture:
-	- ![Architecture](./arch.jpg)
+	- ![Architecture](./imgs/arch.jpg)
 - Create namespace:
 	- kubectl apply -f flaskappwithredis/app-ns.yaml
 - Create redis service:
