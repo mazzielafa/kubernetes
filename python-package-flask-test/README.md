@@ -37,7 +37,7 @@
 	- https://docs.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli
 - ⚠Needs AZ installation:
 	- curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-	- ref: https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
+		- ref: https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
 	- az login
 	- az aks get-credentials --resource-group [myResourceGroup] --name [myAKSCluster] --admin
 - kubectl config get-contexts
